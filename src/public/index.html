@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../public/js/jquery-3.6.0.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="../public/app/client.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sample poll using socket.io</h1>
+    <input id="question" type="Text" rows="10" cols="20" placeholder="Question">
+    <input id="option" type="text" rows="3" cols="20" placeholder="Option">
+    <button id="btnAdd">Add Option</button>
+    <button id="btnSubmit">Submit</button>
+    <ul id="listOption"></ul>
+</body>
+</html>
