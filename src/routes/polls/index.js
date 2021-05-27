@@ -1,5 +1,5 @@
 const route = require('express').Router();
-const {getPoll,postPoll} = require('../../controller/polls')
+const { getPoll, postPoll } = require('../../controller/polls')
 
 route.get('/:id', async (req, res) => {
     try {
@@ -24,17 +24,17 @@ route.get('/:id', async (req, res) => {
 })
 
 route.post('/', async (req, res) => {
-    
+
     let { pollQuestion, pollOptions } = req.body
-    
+
     if (!(pollQuestion) || !(pollOptions)) {
         return res.status(401).send('need the poll-question and the options')
     }
-    
+
     else {
         const thePollId = await postPoll(pollQuestion, pollOptions)
         res.status(201).send(thePollId)
     }
 
 })
-module.exports = route 
+module.exports = route
