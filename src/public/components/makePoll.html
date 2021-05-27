@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../public/js/jquery-3.6.0.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="../public/app/makePoll.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body> -->
+
+<!-- <h1 class="title is-1 content has-text-centered mt-2">Generate Live Poll</h1> -->
+<section class="hero is-small is-success mt-3">
+    <div class="hero-body">
+        <p class="title content has-text-centered is-1">
+            Generate Live Poll
+        </p>
+        <p class="subtitle content has-text-centered ">
+            Everything you need to <strong>create a poll</strong> on <strong>The Polling Booth</strong>
+        </p>
+    </div>
+</section>
+
+<div  class="section">
+    <div class="field">
+        <label class="label">Enter Question</label>
+        <div class="control">
+            <textarea id="question" class="textarea is-primary" row="5" placeholder="Question"></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Enter Options</label>
+        <div class="control">
+            <input id="option" class="input is-success" type="text" placeholder="Option">
+        </div>
+        <button style="margin-top:10px;" class="button is-danger" id="btnAdd">Add Option</button>
+    </div>
+    <ul class="menu-list" id="listOption"></ul>
+    <br>
+    <div id="pollForm"></div>
+    <br>
+    <div class="column is-half is-offset-one-quarter">
+
+        <div class="control">
+            <button id="btnSubmit" class="button is-link is-medium is-fullwidth">Submit</button>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="../app/makePoll.js"></script>
+
+
+
+
+<!-- </body>
+</html> -->
