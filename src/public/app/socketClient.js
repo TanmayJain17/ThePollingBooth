@@ -11,30 +11,33 @@ $(document).ready(
         }
         
         /* console.log(arrBtnCount)  */
+        socket.emit('roomJoin',{
+            roomId:$('#content').data('pollId'),
+            
+
+        })
+        socket.on('roomJoined')
 
         
 
         buttons.click((event)=>{
-            buttons.attr('disabled','disabled');
+            buttons.attr('disabled','disabled');  //buttons disabled
             
-            socket.emit('roomJoin',{
-                roomId:$('#content').data('pollId'),
-                
-
-            })
-            socket.on('roomJoined')
+            
+            
             socket.emit('optionClicked',{
                 roomId:$('#content').data('pollId'),
                 otherOptions:arrBtnCount,
                 optionId:$(event.target).attr('id')
             })
         })
-        socket.on('percentReceived',(data)=>{
-            $('progress').style('display','block')
-            let len = data.length
-            for(let i=0;i< len;i++){
-                $('progress')[i].attr('value',data[i].percent)
-            }
+        socket.on('sendingData',(data)=>{
+            /* $('progress').style('display','block')
+            for(let every of data){
+               let theBar= $('progress').attr('id',every.theOptions.id)
+               theBar.sttr('value',every.theOptions.percent)
+            } */
+            console.log(data)
         }) 
 
         
