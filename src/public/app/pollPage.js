@@ -16,8 +16,8 @@ $.get(`/api/polls/${theId}`, (data) => {
     let theOptions = data.options
     for (let every of theOptions) {
         $('#pollOptions').append(`<div class="section"><button class="button is-success is-light is-large" id=${every.id}>${every.name}</button>
-        
-        <progress id=${every.id} style="display:none;" class="mt-1 progress is-danger is-small" value="0" max="100">45%</progress>
+        <span id="span${every.id}"></span>
+        <progress id='prog${every.id}' style="opacity:0;" class="mt-1 progress is-danger is-small" value="0"  max="100"></progress>
         </div>
         `)
     }
