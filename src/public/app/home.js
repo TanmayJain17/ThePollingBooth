@@ -4,11 +4,11 @@ btnMakePoll.click(() => {
 })
 let btnGoToPoll = $('#btnGoToPoll')
 btnGoToPoll.click(() => {
-    if(!($('#theId').val())){
+    if (!($('#theId').val())) {
         window.alert('enter the poll id')
     }
-    else{
-        $('#content').data('pollId',$('#theId').val())
+    else {
+        $('#content').data('pollId', $('#theId').val())
         $('#content').load('../components/pollPage.html') //?id=${$('#theId').val()}
     }
 })
