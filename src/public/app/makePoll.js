@@ -1,6 +1,3 @@
-/* let socket = io() */
-
-
 $(document).ready(
     function () {
         let socket = io()
@@ -25,7 +22,7 @@ $(document).ready(
 
         btnSubmit.click(() => {
             let idReceived
-            
+
             if (!(question.val()) || !($('li'))) {
                 window.alert('need to have both options and question')
             }
@@ -36,7 +33,7 @@ $(document).ready(
                 let sendArray = []
                 for (let i = 0; i < len; i++) {
                     newArray[i] = { id: i + 1, name: array[i].textContent }
-                    sendArray[i] = {id:i+1,count:0,percent:0}
+                    sendArray[i] = { id: i + 1, count: 0, percent: 0 }
                 }
                 let newQuestion = question.val()
 
@@ -56,24 +53,24 @@ $(document).ready(
                     </div>
                   </section>
                   `)
-                  idReceived = `${data}`
-                 let dataToSend={
-                    theOptions:sendArray,
-                    pollId:idReceived,
-                    totalPeople:0
-                }
-                socket.emit('addData',{dataToSend})
-                  
+                    idReceived = `${data}`
+
+                    socket.emit('addData', {
+                        theOptions: sendArray,
+                        pollId: idReceived,
+                        totalPeople: 0
+                    })
+
 
                 })
-                 
+
             }
         })
 
-        socket.on('dataReceived',(data)=>{
+        socket.on('dataReceived', (data) => {
             console.log(data.idCreated)
         })
-        
+
 
     }
 )
