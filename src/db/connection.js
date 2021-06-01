@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 /* const {pollModel} = require('./modelSchema') */
-
-mongoose.connect('mongodb://localhost:27017/mypoll',{useNewUrlParser:true,useUnifiedTopology: true},(error)=>{
+const mongoDbUrl = process.env.MONGODB_URL ||'mongodb://localhost:27017/mypoll'
+mongoose.connect(mongoDbUrl,{useNewUrlParser:true,useUnifiedTopology: true},(error)=>{
     if(error){
         console.error(error)
     }
