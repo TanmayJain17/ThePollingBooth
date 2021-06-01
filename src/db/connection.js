@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const mongoDbUrl = process.env.MONGODB_URL ||'mongodb://localhost:27017/mypoll'
 mongoose.connect(mongoDbUrl,{useNewUrlParser:true,useUnifiedTopology: true},(error)=>{
     if(error){
-        console.error(error)
+        console.log(error)
     }
     else{
         console.log('successfully connected')
