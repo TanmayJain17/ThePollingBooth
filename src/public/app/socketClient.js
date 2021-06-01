@@ -1,6 +1,6 @@
 $(document).ready(
     function () {
-        let socket = io()
+        let socket = io('My-Heroku-server-address')
         let buttons = $('button')
 
 
