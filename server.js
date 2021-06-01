@@ -63,7 +63,6 @@ io.on('connection', (socket) => {
 
 
 
-server.listen(5334, () => {
+server.listen(PORT, () => {
     console.log(`listening on http://localhost:${PORT}`)
 })
-
