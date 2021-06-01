@@ -24,7 +24,7 @@ $(document).ready(
             let len = data.dataToSend.length;
             for (let i = 1; i <= len; i++) {
                 $(`#prog${i}`).attr('value', `${data.dataToSend.find(ele => ele.id == i).percent}`)
-                console.log($(`#prog${i}`))
+                /* console.log($(`#prog${i}`)) */
                 $(`#span${i}`).text(`${data.dataToSend.find(ele => ele.id == i).percent} %`)
             }
             $('progress').css('opacity', 1)

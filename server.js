@@ -5,6 +5,7 @@ const socket = require('socket.io')
 const connection = require('./src/db/connection')
 const route = require('./src/routes/polls/index')
 
+const PORT = process.env.PORT || 5334
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -50,7 +51,7 @@ io.on('connection', (socket) => {
         let thisRoomData = pollData.find(ele => ele.pollId == clientPollId)
         let dataToSend = thisRoomData.theOptions
 
-        console.log('btnclicked ', 'totalNoClients ', totalNoClients, ' RoomData ', thisRoomData)
+        /* console.log('btnclicked ', 'totalNoClients ', totalNoClients, ' RoomData ', thisRoomData) */
         //send data to every client in the room client
         io.to(clientPollId).emit('sendingRealData', { dataToSend })
 
@@ -63,6 +64,6 @@ io.on('connection', (socket) => {
 
 
 server.listen(5334, () => {
-    console.log('listening on http://localhost:5334')
+    console.log(`listening on http://localhost:${PORT}`)
 })
 

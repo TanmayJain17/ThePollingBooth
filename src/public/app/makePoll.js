@@ -37,7 +37,7 @@ $(document).ready(
                 }
                 let newQuestion = question.val()
 
-                console.log(newQuestion, newArray)
+                /* console.log(newQuestion, newArray) */
 
 
                 $.post('/api/polls', { pollQuestion: newQuestion, pollOptions: newArray }, (data) => {
@@ -68,7 +68,7 @@ $(document).ready(
         })
 
         socket.on('dataReceived', (data) => {
-            console.log(data.idCreated)
+             console.log(data.idCreated) 
         })
 
 
